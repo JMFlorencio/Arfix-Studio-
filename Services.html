@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services| Arfix Digital Solution</title>
+  <link rel="icon" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+     <a href="index.html"> <img src="logo.png" alt="Arfix Digital Solution Logo" /><a/>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item"><i class="fa-solid fa-house"></i> HOME</a></li>
+      <li><a href="Services.html"><i class="fa-solid fa-gear"></i> SERVICES</a></li>
+      <li><a href="portfolio.html" class="nav-item"><i class="fa-solid fa-image"></i> PORTFOLIO</a></li>
+      <li><a href="blogs.html"><i class="fa-solid fa-newspaper"></i> BLOGS</a></li>
+      <li><a href="About Us.html"><i class="fa-solid fa-circle-info"></i> ABOUT US</a></li>
+    </ul>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5D5EcYJiW5Jq2dpgOhShEbQx1eiE1okWmcIEROSdZpDGA1g/viewform" class="quote-btn">GET A QUOTE</a>
+  </nav>
+</header>
+
+<section class="services-hero">
+  <div class="services-hero-content">
+    <h1>Our Services</h1>
+    <p>We provide creative digital solutions that help your business grow and stand out online.</p>
+  </div>
+</section>
+
+<section class="service-section">
+  <div class="service-content">
+    <div class="service-text">
+      <h2>Graphic Design</h2>
+      <p>We create stunning visual designs that communicate your brand's story. From logos and banners to full digital campaigns, our designs are
+	  built to make your brand memorable.</p>
+	   <a href="#" class="image-btn">
+        <img src="Button.png" alt="Learn more about Graphic Design">
+      </a>
+    </div>
+    </div>
+    <div class="service-image">
+      <img src="Graphic Design.png" alt="Graphic Design Service">
+    </div>
+  </div>
+</section>
+
+
+<section class="service-section reverse">
+  <div class="service-content">
+    <div class="service-text">
+      <h2>E-Commerce Solutions</h2>
+      <p>We build optimized, user-friendly online stores that convert visitors into customers. Our e-commerce solutions are tailored for 
+	  platforms like Shopee, Lazada, and Shopify.</p>
+	   <a href="#" class="image-btn">
+        <img src="Button.png" alt="Learn more about Graphic Design">
+      </a>
+    </div>
+    <div class="service-image">
+      <img src="E-commerce section.png" alt="E-Commerce Service">
+    </div>
+  </div>
+</section>
+
+
+<section class="service-section">
+  <div class="service-content">
+    <div class="service-text">
+      <h2>Digital Marketing</h2>
+      <p>Our marketing strategies boost your online presence through SEO, social media, and targeted campaigns designed to reach your ideal audience effectively.</p>
+	   <a href="#" class="image-btn">
+        <img src="Button.png" alt="Learn more about Graphic Design">
+      </a>
+    </div>
+    <div class="service-image">
+      <img src="Digital Marketing.png" alt="Digital Marketing Service">
+    </div>
+  </div>
+</section>
+
+
+<br>
+<br>
+<br>
+<br>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+        <img src="logo.png" alt="Arfix logo" />
+      </div>
+      <div class="footer-links">
+        <h4>SERVICES</h4>
+        <ul>
+          <li>Digital Marketing</li>
+          <li>E-commerce Solutions</li>
+          <li>Graphic Design</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>SITEMAP</h4>
+        <ul>
+          <li>Portfolio</li>
+          <li>Blogs</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>CONTACT US</h4>
+        <p>Email: arfix.digital@gmail.com</p>
+        <div class="socials">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+
+const videoLightbox = document.getElementById("videoLightbox");
+const lightboxVideo = document.getElementById("lightboxVideo");
+const videoClose = videoLightbox.querySelector(".close");
+
+
+document.querySelectorAll(".animation-video").forEach(video => {
+  video.addEventListener("click", () => {
+    lightboxVideo.src = video.querySelector("source").src;
+    videoLightbox.style.display = "flex";
+    lightboxVideo.play();
+  });
+});
+
+
+videoClose.addEventListener("click", () => {
+  videoLightbox.style.display = "none";
+  lightboxVideo.pause();
+  lightboxVideo.src = "";
+});
+
+videoLightbox.addEventListener("click", e => {
+  if (e.target === videoLightbox) {
+    videoLightbox.style.display = "none";
+    lightboxVideo.pause();
+    lightboxVideo.src = "";
+  }
+});
+
+    document.querySelectorAll(".posterSwiper").forEach(swiperEl => {
+      new Swiper(swiperEl, {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: swiperEl.querySelector(".swiper-button-next"),
+          prevEl: swiperEl.querySelector(".swiper-button-prev"),
+        },
+        pagination: {
+          el: swiperEl.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+      });
+    });
+
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const close = document.querySelector(".close");
+
+    document.querySelectorAll(".portfolio-card img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+    close.addEventListener("click", () => (lightbox.style.display = "none"));
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) lightbox.style.display = "none";
+    });
+
+document.querySelectorAll(".animation-video").forEach(video => {
+  video.addEventListener("mouseenter", () => video.play());
+  video.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+
+document.querySelectorAll(".posterSwiper").forEach(swiperEl => {
+  new Swiper(swiperEl, {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: swiperEl.querySelector(".swiper-button-next"),
+      prevEl: swiperEl.querySelector(".swiper-button-prev"),
+    },
+    pagination: {
+      el: swiperEl.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+  });
+});
+
+document.querySelectorAll(".animation-video").forEach(video => {
+
+  video.muted = true;
+
+  video.addEventListener("mouseenter", () => {
+    video.muted = false;       
+    video.play();
+  });
+
+  video.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+    video.muted = true;        
+  });
+});
+
+  </script>
+</body>
+</html>
